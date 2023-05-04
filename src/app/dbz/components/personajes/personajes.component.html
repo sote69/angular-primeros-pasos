@@ -1,0 +1,25 @@
+<h3>{{ titulo }}</h3>
+<hr>
+<ul class="list-group">
+    <li class="list-group-item"
+        [ngClass]="{
+            'list-group-item-success': isFirst,
+            'list-group-item-dark': isLast,
+            'list-group-item-warning': isOdd
+        }"
+
+        *ngFor="let personaje of personajes; let i = index; let isFirst = first; let isLast = last; let isEven = even; let isOdd = odd">
+        <span class="text-primary">{{ i + 1 }}. </span>
+
+        <span>{{personaje.nombre}} - </span>
+
+        <strong>Poder: </strong>
+
+        <span>{{personaje.poder | number}}</span>
+
+        <!-- <span> Es par: {{ isEven }} </span>
+        <span> Es impar: {{ isOdd }} </span>
+        <span> Es el primero: {{ isFirst }}</span>
+        <span> Es el último: {{ isLast }} </span> -->
+    </li>
+</ul>
